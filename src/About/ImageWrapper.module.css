@@ -1,0 +1,86 @@
+.imageWrapper {
+    display: flex;
+    overflow: hidden;
+    width: 30vw;
+    position: relative;
+}
+
+.imageWrapper>img {
+    width: 30vw;
+}
+
+.show {
+    position: relative;
+    z-index: 1;
+}
+
+.hide {
+    position: absolute;
+}
+
+.toLeft .show {
+    animation: showLeft .5s ease-out forwards;
+}
+
+.toLeft .hide {
+    animation: hideLeft .5s ease-out forwards;
+}
+
+.toRight .show {
+    animation: showRight .5s ease-out forwards;
+}
+
+.toRight .hide {
+    animation: hideRight .5s ease-out forwards;
+}
+
+@keyframes showLeft {
+    from {
+        transform: translateX(30vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes hideLeft {
+    from {
+        transform: translateX(0vw);
+    }
+
+    to {
+        transform: translateX(-30vw);
+    }
+}
+
+@keyframes showRight {
+    from {
+        transform: translateX(-30vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes hideRight {
+    from {
+        transform: translateX(0vw);
+    }
+
+    to {
+        transform: translateX(30vw);
+    }
+}
+
+
+@media (max-width: 600px) and (max-height: 800px) {
+    .imageWrapper {
+        width: 70vw;
+    }
+    
+    .imageWrapper > img {
+        width: 70vw;
+    }
+}
