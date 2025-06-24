@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "title": "HTML", 
+            "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu ",
+            "ind": true,
+            "src": "./HTML.jpg",
+            "imgName": "Html.png"
+        },
+        {
+            "title": "CSS", 
+            "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu ",
+            "ind": false,
+            "src": "./CSS.png",
+            "imgName": "CSS.png"
+        },
+        {
+            "title": "Graphics Design I", 
+            "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu ",
+            "ind": false,
+            "src": "./HTML.jpg",
+            "imgName": "Html.png"
+        },
+        {
+            "title": "Graphics Design II", 
+            "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu ",
+            "ind": false,
+            "src": "./HTML.jpg",
+            "imgName": "Html.png"
+        }
+    ]
+
+}
