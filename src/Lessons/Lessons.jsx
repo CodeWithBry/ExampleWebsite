@@ -3,7 +3,7 @@ import s from './Lessons.module.css';
 import { context } from '../App';
 
 const Lessons = () => {
-    const { setLessonsPage } = useContext(context)
+    const { setLessonsPage, pages } = useContext(context)
     const [lessons, setLessons] = useState();
     const [activeIndex, setActiveIndex] = useState(0);
     const lessonsRef = useRef(null)
@@ -32,7 +32,7 @@ const Lessons = () => {
 
 
     return (
-        <section className={s.lessons} id="lessons" ref={lessonsRef}>
+        <section className={pages[1]?.hideComponents ? `${s.hideComponents} ${s.lessons}` : `${s.animate} ${s.lessons}` } id="lessons" ref={lessonsRef}>
             <div className={s.wrapper}>
                 <div className={s.left}>
                     {lessons?.map((pro, i) => {

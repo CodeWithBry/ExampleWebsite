@@ -3,7 +3,7 @@ import s from './Petas.module.css';
 import { context } from '../App';
 
 const Petas = () => {
-    const { setPetasPage } = useContext(context)
+    const { setPetasPage, pages } = useContext(context)
     const petasRef = useRef(null)
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const Petas = () => {
     }, [petasRef])
 
     return (
-        <section className={s.petas} id='petas' ref={petasRef}>
+        <section className={pages[2]?.hideComponents ? `${s.hideComponents} ${s.petas}` : `${s.animate} ${s.petas}`} id='petas' ref={petasRef}>
             <div className={s.row}>
                 <div className={s.projectDivs}>
                     <h2>Quarter 1: PETA 1 - </h2>

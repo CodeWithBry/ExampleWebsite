@@ -4,7 +4,7 @@ import { context } from "../App"
 import ImageWrapper from "./ImageWrapper"
 
 const About = () => {
-  const { setAboutPage } = useContext(context)
+  const { setAboutPage, pages } = useContext(context)
   const aboutRef = useRef()
   const imgBox = useRef()
   const images = ["./Sarah1.jpg", "./Sarah2.jpg", "./Sarah3.jpg",]
@@ -19,7 +19,7 @@ const About = () => {
 
 
   return (
-    <div className={s.about} id="about" ref={aboutRef}>
+    <div className={pages[3]?.hideComponents ? `${s.hideComponents} ${s.about}` : `${s.animate} ${s.about}`} id="about" ref={aboutRef}>
       <div className={s.left}>
         <div className={s.wrapper}>
           <h1>About Me</h1>

@@ -13,11 +13,12 @@ export const context = createContext()
 function App() {
 
   const [pages, setPages] = useState([
-    { name: 'Home', ind: true, class: "fa fa-home" },
-    { name: 'Lessons', ind: false, class: "	fa fa-book" },
-    { name: 'PETAs', ind: false, class: "fa fa-cubes" },
-    { name: 'About', ind: false, class: "	fa fa-address-book" }
+    { name: 'Home', ind: true, class: "fa fa-home", hideComponents: false },
+    { name: 'Lessons', ind: false, class: "	fa fa-book", hideComponents: true },
+    { name: 'PETAs', ind: false, class: "fa fa-cubes", hideComponents: true },
+    { name: 'About', ind: false, class: "	fa fa-address-book", hideComponents: true }
   ])
+  const [body, setBody] = useState(document.body)
   const [homePage, setHomePage] = useState(false)
   const [petasPage, setPetasPage] = useState(false)
   const [lessonsPage, setLessonsPage] = useState(false)

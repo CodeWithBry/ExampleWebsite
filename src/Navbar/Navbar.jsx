@@ -8,20 +8,32 @@ const Navbar = () => {
 
 
     window.onscroll = () => {
+        console.log("------------------");
         tabs.forEach((tab, index) => {
             const section = tab;
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const scrollPosition = window.scrollY + window.innerHeight / 2;
 
+            const isVisible = scrollPosition >= sectionTop ;
+
+            // Set active tab indicator
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 setPages(prev => prev.map((page, i) => ({
                     ...page,
                     ind: i === index
                 })));
             }
-        })
-    }
+
+            // Toggle hideComponents based on visibility
+            setPages(prev => prev.map((p, i) => {
+                if (i === index) {
+                    return { ...p, hideComponents: !isVisible };
+                }
+                return p;
+            }));
+        });
+    };
 
     useEffect(() => {
 
@@ -65,9 +77,9 @@ const Navbar = () => {
                         </li>
                     ))}
                     <div className={s.indicator} ref={indicatorRef} ></div>
-                    <button 
+                    <button
                         className={s.hamburgerButton}
-                        onClick={()=>{setHideSideBar(false)}} >
+                        onClick={() => { setHideSideBar(false) }} >
                         <i className="fa fa-bars"></i>
                     </button>
                 </div>

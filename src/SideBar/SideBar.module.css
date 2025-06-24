@@ -1,49 +1,13 @@
-.sideBarWrapper {
+.sideBarWrapper, .hideSideBarWrapper {
     display: none;
 }
 
-.sideBarBox {
-    transform: translateX(90vw);
-    animation: showSideBar .5s ease-in-out forwards;
-}
 
-.hideSideBarBox {
-    transform: translateX(0vw);
-    animation: hideSideBar .5s ease-in-out forwards;
-}
-
-@keyframes showSideBar {
-    to {
-        transform: translateX(0vw);
-    }
-}
-
-@keyframes hideSideBar{
-    to {
-        transform: translateX(90vw);
-    }
-}
-
-.hideSideBarWrapper {
-    animation: hideWrapper .4s ease forwards;
-}
-
-@keyframes hideWrapper {
-    0% {
-        opacity: 1;
-    }
-
-    99% {
-        opacity: 0;
-    }
-
-    100% {
-        display: none;
-    }
-}
 
 @media (max-width: 600px) and (max-height: 900px) {
-    .sideBarWrapper, .hideSideBarWrapper {
+
+    .sideBarWrapper,
+    .hideSideBarWrapper {
         display: flex;
         justify-content: end;
         width: 100vw;
@@ -54,7 +18,48 @@
         font-family: Kadwa;
     }
 
-    .sideBarBox, .hideSideBarBox {
+    .sideBarBox {
+        transform: translateX(90vw);
+        animation: showSideBar .5s ease-in-out forwards;
+    }
+
+    .hideSideBarBox {
+        transform: translateX(0vw);
+        animation: hideSideBar .5s ease-in-out forwards;
+    }
+
+    @keyframes showSideBar {
+        to {
+            transform: translateX(0vw);
+        }
+    }
+
+    @keyframes hideSideBar {
+        to {
+            transform: translateX(90vw);
+        }
+    }
+
+    .hideSideBarWrapper {
+        animation: hideWrapper .4s ease forwards;
+    }
+
+    @keyframes hideWrapper {
+        0% {
+            opacity: 1;
+        }
+
+        99% {
+            opacity: 0;
+        }
+
+        100% {
+            display: none;
+        }
+    }
+
+    .sideBarBox,
+    .hideSideBarBox {
         width: 80vw;
         height: 100%;
         background-color: #fff5f5;

@@ -1,19 +1,21 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import s from './Home.module.css'
 import { context } from '../App'
+import a from './animation.module.css'
 
 const Home = () => {
-  const { setHomePage } = useContext(context)
+  const { setHomePage, pages } = useContext(context)
   const homePage = useRef(null)
 
   useEffect(() => {
     if (homePage?.current) {
       setHomePage(homePage.current)
+      console.log(pages[0].hideComponents)
     }
   }, [homePage])
 
   return (
-    <section className={s.home} id="home" ref={homePage}>
+    <div className={pages[0]?.hideComponents ? `${s.hideComponents} ${s.home}` : `${s.home} ${s.animate}` } id="home" ref={homePage}>
       <div className={s.left}>
         <h1>Welcome Students!</h1>
         <p>This is an example website built through HTML, CSS and Javascript. Start creating your personal website my dear students!</p>
@@ -44,7 +46,7 @@ const Home = () => {
         <img src="./Sarah.png" alt="" />
 
       </div>
-    </section>
+    </div>
   )
 }
 
