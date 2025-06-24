@@ -24,9 +24,18 @@ const Home = () => {
           </button>
           <div className={s.platforms}>
 
-            <img src="./facebook.png" alt="facebook" title='facebook' />
-            <img src="./Instagram.png" alt="instagram" title='instagram' />
-            <img src="./gmail.png" alt="gmail" title='gmail' />
+            <button>
+              <img src="./facebook.png" alt="facebook" title='facebook' />
+              <p>Facebook</p>
+            </button>
+            <button>
+              <img src="./Instagram.png" alt="instagram" title='instagram' />
+              <p>Instagram</p>
+            </button>
+            <button>
+              <img src="./gmail.png" alt="gmail" title='gmail' />
+              <p>Gmail</p>
+            </button>
           </div>
         </div>
 

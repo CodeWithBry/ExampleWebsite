@@ -17,7 +17,7 @@ const Lessons = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('./src/Lessons/data.json');
+                const response = await fetch('/ExampleWebsite/JSONFiles/data.json');
                 const data = await response.json();
                 console.log(data)
                 setLessons(data.data);

@@ -197,31 +197,34 @@ button {
 }
 
 .lessons .buttons .abled {
-    filter: brightness(1);
-}
-
-.lessons .buttons .abled:hover {
     color: black;
 }
 
+.lessons .buttons .abled:hover {
+    color: rgb(58, 56, 56);
+}
+
 .lessons .buttons>.abled:active {
-    background-color: #a5a3a3;
+    background-color: #f1f1f1;
 }
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 600px) and (max-height: 900px) {
     .lessons {
         flex-direction: column;
         height: fit-content;
+        padding: 2rem 0;
     }
 
     .lessons .wrapper {
         flex-direction: column-reverse;
+        gap: 0;
+        height: fit-content;
     }
 
     .lessons .buttons>button {
-        background-color: #d7d5d2;
+        background-color: transparent;
         color: #a79f9f;
         border: none;
         font-weight: bold;
@@ -246,8 +249,12 @@ button {
         height: fit-content;
     }
 
+    .lessons .left .image {
+        width: 15rem;
+    }
+
     .lessons .right {
-        height: 60vh;
+        height: fit-content;
     }
 
     .lessons .right .wrapper {
@@ -269,5 +276,12 @@ button {
         width: 90vw;
     }
 
+
+}
+
+@media (max-width: 600px) and (max-height: 400px) {
+    .lessons .right .wrapper {
+        height: 80vh;
+    }
 
 }

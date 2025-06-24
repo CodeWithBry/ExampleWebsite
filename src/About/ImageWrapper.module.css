@@ -19,19 +19,19 @@
 }
 
 .toLeft .show {
-    animation: showLeft .5s ease-out forwards;
+    animation: showLeft .75s ease-in-out forwards;
 }
 
 .toLeft .hide {
-    animation: hideLeft .5s ease-out forwards;
+    animation: hideLeft .75s ease-in-out forwards;
 }
 
 .toRight .show {
-    animation: showRight .5s ease-out forwards;
+    animation: showRight .75s ease-in-out forwards;
 }
 
 .toRight .hide {
-    animation: hideRight .5s ease-out forwards;
+    animation: hideRight .75s ease-in-out forwards;
 }
 
 @keyframes showLeft {
@@ -79,8 +79,64 @@
     .imageWrapper {
         width: 70vw;
     }
-    
-    .imageWrapper > img {
+
+    .imageWrapper>img {
         width: 70vw;
+    }
+
+    .toLeft .show {
+        animation: showLeft .75s ease-in-out forwards;
+    }
+
+    .toLeft .hide {
+        animation: hideLeft .75s ease-in-out forwards;
+    }
+
+    .toRight .show {
+        animation: showRight .75s ease-in-out forwards;
+    }
+
+    .toRight .hide {
+        animation: hideRight .75s ease-in-out forwards;
+    }
+
+    @keyframes showLeft {
+        from {
+            transform: translateX(70vw);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes hideLeft {
+        from {
+            transform: translateX(0vw);
+        }
+
+        to {
+            transform: translateX(-70vw);
+        }
+    }
+
+    @keyframes showRight {
+        from {
+            transform: translateX(-70vw);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes hideRight {
+        from {
+            transform: translateX(0vw);
+        }
+
+        to {
+            transform: translateX(70vw);
+        }
     }
 }
