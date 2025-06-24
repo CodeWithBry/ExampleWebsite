@@ -117,6 +117,7 @@
     .home {
         flex-direction: column-reverse;
         height: fit-content;
+        padding-bottom: 2rem;
     }
 
     .home>div {
