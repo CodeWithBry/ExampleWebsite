@@ -34,6 +34,7 @@ const About = () => {
       </div>
       <div className={s.right}>
         <div className={s.wrapper}>
+          <h2>Pictures Of Me:</h2>
           <ImageWrapper 
             ind={ind}
             images={images}

@@ -102,6 +102,10 @@
     }
 }
 
+.about .right .wrapper h2 {
+    text-align: center;
+}
+
 .about .right .wrapper .indicatorWrapper {
     display: flex;
     align-items: center;
@@ -132,7 +136,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
 }
 
 .about .right .wrapper .buttonsWrapper .slideButt {
@@ -151,15 +155,15 @@
 }
 
 .about .right .wrapper .buttonsWrapper .abled {
-    filter: brightness(1);
-}
-
-.about .right .wrapper .buttonsWrapper .abled:hover {
     color: black;
 }
 
+.about .right .wrapper .buttonsWrapper .abled:hover {
+    color: rgb(58, 56, 56);
+}
+
 .about .right .wrapper .buttonsWrapper .abled:active {
-    background-color: #a5a3a3;
+    background-color: #f1f1f1;
 }
 
 @media (max-width: 600px) and (max-height: 800px) {
