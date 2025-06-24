@@ -1,4 +1,4 @@
-.hideComponents > * {
+.hideComponents>* {
     opacity: 0;
 }
 
@@ -100,6 +100,7 @@
     from {
         transform: translateX(30vw);
     }
+
     to {
         transform: translateX(0);
     }
@@ -109,6 +110,7 @@
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-30vw);
     }
@@ -118,6 +120,7 @@
     from {
         transform: translateX(-30vw);
     }
+
     to {
         transform: translateX(0);
     }
@@ -127,6 +130,7 @@
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(30vw);
     }
@@ -197,6 +201,18 @@
 }
 
 @media (max-width: 600px) and (max-height: 800px) {
+    .animate .left {
+        opacity: 0;
+        transform: translateY(100vh);
+        animation: leftUp .7s .5s ease-out forwards;
+    }
+
+    .animate .right {
+        opacity: 0;
+        transform: translateY(100vh);
+        animation: rightUp .7s 0s ease-out forwards;
+    }
+
     .about {
         flex-direction: column-reverse;
         justify-content: center;
@@ -204,7 +220,7 @@
         height: fit-content;
     }
 
-    .about > div {
+    .about>div {
         padding: 3rem 0;
     }
 
@@ -213,15 +229,20 @@
         height: fit-content;
     }
 
-    
+
     .about .left .wrapper {
         width: 90vw;
         height: fit-content;
-        
+
     }
+
     .about .right {
         height: fit-content;
         width: 90vw;
+    }
+
+    .about .right .wrapper .buttonsWrapper {
+        width: 120%;
     }
 
 }

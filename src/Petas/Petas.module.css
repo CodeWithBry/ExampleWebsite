@@ -1,29 +1,29 @@
-.hideComponents > * {
+.hideComponents>* {
     opacity: 0;
 }
 
-.animate .row:nth-of-type(1) .projectDivs:nth-of-type(1){
+.animate .row:nth-of-type(1) .projectDivs:nth-of-type(1) {
     opacity: 0;
     transform: translateY(30vh);
     animation: up .7s 0s ease-out forwards;
 }
 
-.animate .row:nth-of-type(1) .projectDivs:nth-of-type(2){
+.animate .row:nth-of-type(2) .projectDivs:nth-of-type(1) {
     opacity: 0;
     transform: translateY(30vh);
-    animation: up .7s 1s ease-out forwards;
+    animation: up .7s .7s ease-out forwards;
 }
 
-.animate .row:nth-of-type(2) .projectDivs:nth-of-type(1){
+.animate .row:nth-of-type(1) .projectDivs:nth-of-type(2) {
     opacity: 0;
     transform: translateY(30vh);
     animation: up .7s 1.2s ease-out forwards;
 }
 
-.animate .row:nth-of-type(2) .projectDivs:nth-of-type(2){
+.animate .row:nth-of-type(2) .projectDivs:nth-of-type(2) {
     opacity: 0;
     transform: translateY(30vh);
-    animation: up .7s 1.7s ease-out forwards;
+    animation: up .7s 1.5s ease-out forwards;
 }
 
 .animate .row {
@@ -32,7 +32,7 @@
     animation: up .7s .5s ease-out forwards;
 }
 
-@keyframes up{
+@keyframes up {
     to {
         opacity: 1;
         transform: translateY(0vh);
@@ -41,22 +41,18 @@
 
 .petas {
     display: flex;
-    flex-direction: column;
     width: 100vw;
     height: fit-content;
     padding: 2rem 0;
     justify-content: center;
-    align-items: center;
     font-family: Kadwa;
-    gap: 2rem;
 }
 
 .petas .row {
     display: flex;
+    flex-direction: column;
     height: fit-content;
-    justify-content: center;
-    align-items: center;
-    width: 90vw;
+    width: 45vw;
     gap: 1rem;
 }
 
@@ -64,7 +60,7 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: fit-content ;
+    width: fit-content;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 1rem;
@@ -94,6 +90,30 @@
 }
 
 @media (max-width: 768px) and (max-height: 800px) {
+    .animate .row:nth-of-type(1) .projectDivs:nth-of-type(1) {
+        opacity: 0;
+        transform: translateY(30vh);
+        animation: up .7s 0s ease-out forwards;
+    }
+
+    .animate .row:nth-of-type(1) .projectDivs:nth-of-type(2) {
+        opacity: 0;
+        transform: translateY(30vh);
+        animation: up .7s .7s ease-out forwards;
+    }
+
+    .animate .row:nth-of-type(2) .projectDivs:nth-of-type(1) {
+        opacity: 0;
+        transform: translateY(30vh);
+        animation: up .7s 1.2s ease-out forwards;
+    }
+
+    .animate .row:nth-of-type(2) .projectDivs:nth-of-type(2) {
+        opacity: 0;
+        transform: translateY(30vh);
+        animation: up .7s 1.5s ease-out forwards;
+    }
+
     .petas {
         flex-direction: column;
         align-items: center;

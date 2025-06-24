@@ -241,6 +241,18 @@ button {
 
 
 @media (max-width: 600px) and (max-height: 900px) {
+    .animate .left {
+        opacity: 0;
+        transform: translateY(100vh);
+        animation: leftUp .7s .5s ease-out forwards;
+    }
+
+    .animate .right {
+        opacity: 0;
+        transform: translateY(100vh);
+        animation: rightUp .7s 0s ease-out forwards;
+    }
+
     .lessons {
         flex-direction: column;
         height: fit-content;
