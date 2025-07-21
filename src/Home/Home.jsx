@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import s from './Home.module.css'
 import { context } from '../App'
-import a from './animation.module.css'
 
 const Home = () => {
   const { setHomePage, pages } = useContext(context)

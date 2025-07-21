@@ -34,7 +34,7 @@
     width: 100vw;
     height: 100vh;
     font-family: Kadwa;
-    background: white;
+    background: #f9a84d;
 }
 
 .about>div {
@@ -58,6 +58,7 @@
     justify-content: center;
     width: 40vw;
     height: 100vh;
+    color: white;
 }
 
 .about .left .wrapper>* {
@@ -69,75 +70,20 @@
     flex-direction: column;
     width: fit-content;
     justify-content: center;
-    background-color: #d7d5d2;
-    border-radius: 1rem 1rem 0 0;
+    background-color: white;
+    border-radius: 1rem;
     border: 2px;
-    border-style: ridge;
-    border-color: #5c5c5c;
     height: fit-content;
-    padding: .5rem;
+    padding: .5rem 0;
     position: relative;
     box-shadow: 0 5px 10px #5c5c5c75;
 }
 
-.showToLeft {
-    animation: showLeft .5s ease-out forwards;
-}
-
-.hideToLeft {
-    animation: hideLeft .5s ease-out forwards;
-}
-
-.showToRight {
-    animation: showRight .5s ease-out forwards;
-}
-
-.hideToRight {
-    animation: hideRight .5s ease-out forwards;
-}
-
-@keyframes showLeft {
-    from {
-        transform: translateX(30vw);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes hideLeft {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-30vw);
-    }
-}
-
-@keyframes showRight {
-    from {
-        transform: translateX(-30vw);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes hideRight {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(30vw);
-    }
-}
-
 .about .right .wrapper h2 {
     text-align: center;
+    background-color: transparent;
+    color: #d75e07;
+    border-radius: 30%;
 }
 
 .about .right .wrapper .indicatorWrapper {
@@ -146,14 +92,15 @@
     justify-content: center;
     width: 100%;
     height: 30px;
-    background-color: #d8d4d4;
+    background-color: transparent;
     gap: .5rem;
+    border-radius: 30%;
 }
 
 .about .right .wrapper .indicatorWrapper .indicators {
-    width: .5rem;
+    width: .8rem;
     height: .5rem;
-    background-color: #a5a3a3;
+    background-color: #d75e07;
     border-radius: .5rem;
     transition: .3s ease-out;
 }
@@ -165,7 +112,7 @@
 .about .right .wrapper .buttonsWrapper {
     display: flex;
     justify-content: space-between;
-    width: 140%;
+    width: 120%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -175,13 +122,15 @@
 
 .about .right .wrapper .buttonsWrapper .slideButt {
     background-color: transparent;
-    color: #a79f9f;
+    color: #fff;
     border: none;
     font-weight: bold;
     border-radius: .25rem;
     font-size: 3rem;
     width: 5rem;
     height: 5rem;
+    cursor: pointer;
+    transition: .3s ease-out;
 }
 
 .about .right .wrapper .buttonsWrapper .disabled {
@@ -189,11 +138,11 @@
 }
 
 .about .right .wrapper .buttonsWrapper .abled {
-    color: black;
+    color: #d75e07;
 }
 
 .about .right .wrapper .buttonsWrapper .abled:hover {
-    color: rgb(58, 56, 56);
+    color: #e58a49;
 }
 
 .about .right .wrapper .buttonsWrapper .abled:active {
@@ -242,7 +191,7 @@
     }
 
     .about .right .wrapper .buttonsWrapper {
-        width: 120%;
+        width: 100%;
     }
 
 }

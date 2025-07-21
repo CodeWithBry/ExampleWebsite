@@ -4,15 +4,17 @@ import { context } from '../App';
 
 const Lessons = () => {
     const { setLessonsPage, pages } = useContext(context)
+    const lessonsRef = useRef()
+    const lessonsBoxRef = useRef()
     const [lessons, setLessons] = useState();
-    const [activeIndex, setActiveIndex] = useState(0);
-    const lessonsRef = useRef(null)
 
-    useEffect(() => {
-        if (lessonsRef?.current) {
-            setLessonsPage(lessonsRef.current)
-        }
-    }, [lessonsRef])
+    function slideElement(bool) {
+        const e = lessonsBoxRef.current
+        const scrollAmount = 350
+
+
+        bool == 1 ? e.scrollBy({ left: scrollAmount, behavior: 'smooth' }) : e.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,54 +31,42 @@ const Lessons = () => {
         fetchData();
     }, [])
 
+    useEffect(() => {
+        if (lessonsRef?.current) {
+          setLessonsPage(lessonsRef.current)
+        }
+      }, [lessonsRef])
 
 
     return (
-        <section className={pages[1]?.hideComponents ? `${s.hideComponents} ${s.lessons}` : `${s.animate} ${s.lessons}` } id="lessons" ref={lessonsRef}>
-            <div className={s.wrapper}>
-                <div className={s.left}>
-                    {lessons?.map((pro, i) => {
-                        return <img src={pro.src} title={pro.img} className={pro.ind ? `${s.show} ${s.image}` : `${s.hide} ${s.image}`} />
-                    })}
-                </div>
-                <div className={s.right}>
-                    {lessons?.map((pro, i) => {
-                        return (
-                            <div className={pro.ind ? `${s.show} ${s.wrapper}` : `${s.hide} ${s.wrapper}`} key={i + pro.title}>
-                                <h2><span>{pro.title}</span></h2>
-                                <div className={s.contentWrapper}>
-                                    <div className={s.content}>
-                                        {pro.description}
-                                    </div>
-                                </div>
+        <div className={!pages[1]?.hideComponents ? `${s.show} ${s.lessonsWrapper}` : `${s.hide} ${s.lessonsWrapper}`} id='lessons' ref={lessonsRef}>
+            <div className={s.top}>
+                <h1 className={!pages[1]?.hideComponents ? s.showTitle : null}>LESSONS FOR THE WHOLE YEAR</h1>
+            </div>
+
+            <div className={s.bottom}>
+                 <button id={s.toLeft} onClick={() => { slideElement(0) }}>
+                        <i className="	fa fa-angle-left"></i>
+                    </button>
+                    <button id={s.toRight} onClick={() => { slideElement(1) }}>
+                        <i className="	fa fa-angle-right"></i>
+                    </button>
+                <div className={s.lessonsBox} ref={lessonsBoxRef}>
+
+                    {lessons?.map((con, i) => {
+                        return <div className={!pages[1]?.hideComponents ? `${s.showCard} ${s.lessonWrapper}` : `${s.hideCard} ${s.lessonWrapper}`}>
+                            <div className={s.imageContainer}>
+                                <img src={con.src} ttile={con.src} />
                             </div>
-                        )
+                            <div className={s.contentBox}>
+                                <h3>{con.title}</h3>
+                                <p>{con.description}</p>
+                            </div>
+                        </div>
                     })}
                 </div>
             </div>
-            <div className={s.buttons}>
-                <button
-                    className={activeIndex > 0 ? s.abled : s.disabled}
-                    onClick={() => {
-                        if (activeIndex > 0) {
-                            setActiveIndex((prevIndex) => prevIndex - 1);
-                            setLessons(prev => prev.map((item, index) => (
-                                index === activeIndex - 1 ? { ...item, ind: true } : { ...item, ind: false }
-                            )))
-                        }
-                    }}> <i className='fa fa-arrow-left'></i> </button>
-                <button
-                    className={activeIndex < 3 ? s.abled : s.disabled}
-                    onClick={() => {
-                        if (activeIndex < 3) {
-                            setActiveIndex((prevIndex) => prevIndex + 1);
-                            setLessons(prev => prev.map((item, index) => (
-                                index === activeIndex + 1 ? { ...item, ind: true } : { ...item, ind: false }
-                            )))
-                        }
-                    }}><i className='fa fa-arrow-right'></i></button>
-            </div>
-        </section>
+        </div>
     )
 }
 

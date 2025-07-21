@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Martian+Mono:wght@100..800&display=swap');
 
+
 .navBar {
     width: 100vw;
-    height: 6.35rem;
+    height: 5rem;
     display: flex;
     position: fixed;
     align-items: center;
     justify-content: space-between;
-    background-color: #9c9b9ab7;
+    background-color: aliceblue;
+    box-shadow: -1px -2px 8px 0px black;
     font-family: Kadwa;
     z-index: 3;
 }
@@ -26,7 +28,7 @@
 }
 
 .navBar .logo h1 {
-    color: white;
+    color: rgb(244, 111, 2);
     font-size: 2rem;
     font-weight: 1000;
 }
@@ -36,7 +38,7 @@
     display: flex;
     align-items: center;
     gap: 3rem;
-    margin-right: 1.5rem;
+    margin-right: 2.5rem;
     position: relative;
 }
 
@@ -47,7 +49,7 @@
 
 .navBar .navLinks .links>a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.63);
+    color: rgba(134, 105, 59, 0.63);
     font-size: 1.2rem;
     font-weight: bold;
     width: 3.5rem;
@@ -102,12 +104,13 @@
 .navBar .navLinks .hamburgerButton {
     list-style: none;
     margin-right: 1.5rem;
-    color: white;
+    color: rgb(247, 143, 31);
     font-size: 2rem;
     cursor: pointer;
     background-color: transparent;
     outline: none;
     border: none;
+    display: none;
 }
 
 @keyframes showInd {
@@ -147,6 +150,7 @@
     .navBar .navLinks .hamburgerButton {
         font-size: 1.5rem;
         margin-right: 0;
+        display: block;
     }
 
     .navBar .navLinks.active {

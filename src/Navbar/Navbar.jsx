@@ -5,10 +5,11 @@ import { context } from '../App'
 const Navbar = () => {
     const { pages, setPages, tabs, setHideSideBar } = useContext(context)
     const indicatorRef = useRef(null)
+    const width = window.innerWidth
+    const height = window.innerHeight
 
 
     window.onscroll = () => {
-        console.log("------------------");
         tabs.forEach((tab, index) => {
             const section = tab;
             const sectionTop = section.offsetTop;

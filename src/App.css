@@ -5,5 +5,10 @@
 }
 
 body {
+    background-color: lightcyan;
     overflow-x: hidden;
+
+    &::-webkit-scrollbar{
+        width: 0px;
+    }
 }

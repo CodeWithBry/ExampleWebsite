@@ -42,7 +42,7 @@ const About = () => {
           <div className={s.indicatorWrapper}>
             {
               images?.map((img, i)=>{
-                return <div className={ind == i ? `${s.indicated} ${s.indicators}` : `${s.indicators}`}></div>
+                return <div className={ind == i ? `${s.indicated} ${s.indicators}` : `${s.indicators}`} onClick={()=>{setInd(i)}}></div>
               })
             }
           </div>

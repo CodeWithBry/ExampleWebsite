@@ -1,329 +1,190 @@
-button {
-    cursor: pointer;
-    transition: .2s ease-out;
-}
-
-.hideComponents>* {
-    opacity: 0;
-}
-
-.animate .left {
-    opacity: 0;
-    transform: translateY(100vh);
-    animation: leftUp .7s 0s ease-out forwards;
-}
-
-.animate .right {
-    opacity: 0;
-    transform: translateY(100vh);
-    animation: rightUp .7s .5s ease-out forwards;
-}
-
-@keyframes leftUp {
-    to {
-        opacity: 1;
-        transform: translateY(0vh);
-    }
-}
-
-@keyframes rightUp {
-    to {
-        opacity: 1;
-        transform: translateY(0vh);
-    }
-}
-
-.lessons {
-    display: flex;
-    flex-direction: column;
+.lessonsWrapper {
     width: 100vw;
     height: fit-content;
-    font-family: Kadwa;
-    background: #f1f1f1;
+    background-color: transparent;
+    font-family: "Kadwa";
+    background-color: #f9a84d;
+}
+
+.hide>* {
+    opacity: 0;
+}
+
+.show>* {
+    opacity: 1;
+}
+
+.top {
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    height: fit-content;
+}
+
+.top>h1 {
+    width: fit-content;
+    text-align: center;
+    color: #e59e05;
+    margin-top: 5rem;
+    text-shadow: 2px 2px 7px -2px black;
+    padding: .5rem clamp(.5rem, 5vw, 5rem);
+    font-size: clamp(1rem, 5vw, 3rem);
+    background-color: white;
+    border-radius: 3rem;
+    box-shadow: 2px 2px 7px -2px black;
+}
+
+.top .showTitle {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: popLesson .5s .3s ease-in forwards;
+}
+
+.bottom {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+    margin: auto;
     position: relative;
 }
 
-.lessons>div {
+.bottom .slideButtons {
+    position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100vw;
-}
-
-.lessons .wrapper {
-    display: flex;
-    width: 100vw;
+    justify-content: space-between;
+    width: 100%;
     height: fit-content;
-    gap: 3rem;
-    height: 90vh;
+    z-index: 1;
 }
 
-
-.lessons .left {
-    align-content: center;
-    justify-content: center;
-}
-
-.lessons .left .image {
-    width: 40vw;
-    border-radius: 3rem;
-    border: 5px;
-    border-style: dashed;
-}
-
-.lessons .left .show {
-    opacity: 0;
-    animation: popUp .3s ease-out forwards;
-}
-
-@keyframes popUp {
-    to {
-        opacity: 1;
-    }
-}
-
-.lessons .left .hide {
-    display: none;
-}
-
-.lessons .right .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70vh;
-    gap: .5rem;
-}
-
-.lessons .right .show {
-    display: flex;
-}
-
-.lessons .right .hide {
-    display: none;
-}
-
-.lessons .right .wrapper h2 {
-    width: 40vw;
-    display: grid;
-    place-content: center;
-    overflow: hidden;
-    overflow-x: auto;
-    padding: .5rem 0;
-    background-color: #f9a84d;
-    color: whitesmoke;
-    border-radius: .25rem;
-}
-
-.lessons .right .wrapper span {
-    font-size: clamp(1.5rem, 5vw, 1.75rem);
-    text-align: center;
-}
-
-.right .show>h2>span {
-    opacity: 0;
-    animation: showText .3s ease-out forwards;
-}
-
-.right .hide>h2>span {
-    opacity: 1;
-    animation: hideText .3s ease-out forwards;
-}
-
-@keyframes showText {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes hideText {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.lessons .right .wrapper .contentWrapper {
-    width: 100%;
-    height: 100%;
-    background-color: #f9a84d;
-    color: whitesmoke;
-    width: 40vw;
-    border-radius: .25rem;
+.bottom>button {
+    font-size: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     display: grid;
     place-items: center;
-    overflow: hidden;
-    overflow-y: auto;
-}
-
-.lessons .right .wrapper .contentWrapper .content {
-    width: 80%;
-    height: 90%;
-    text-indent: 1cm;
-    overflow: hidden;
-    overflow-y: auto;
-    opacity: 0;
-    transform: translateX(100%);
-    animation: slide .3s ease-out forwards;
-}
-
-.lessons .right .wrapper .contentWrapper .content::-webkit-scrollbar {
-    width: 5px;
-    background-color: var(--buttColor);
-}
-
-
-.lessons .right .wrapper .contentWrapper .content::-webkit-scrollbar-track {
-    background-color: #e8be76;
-}
-
-
-.lessons .right .wrapper .contentWrapper .content::-webkit-scrollbar-thumb {
-    background-color: #a5a3a3;
-    border-radius: 2rem;
-}
-
-
-@keyframes slide {
-    to {
-        opacity: 1;
-        transform: translateX(0%);
-    }
-}
-
-.lessons .buttons {
-    width: 90vw;
-    display: flex;
+    color: white;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #f5b11f;
+    outline: none;
+    cursor: pointer;
+    transition: all .2s ease-out;
+    z-index: 1;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    justify-content: space-between;
-    margin: 2rem 0;
+    transform: translateY(-50%);
 }
 
-.lessons .buttons>button {
-    background-color: transparent;
-    color: #a79f9f;
-    border: none;
-    font-weight: bold;
-    border-radius: .25rem;
-    font-size: 3rem;
-    width: 6rem;
-    height: 6rem;
-
+#toRight {
+    right: 0;
 }
 
-.lessons .buttons .disabled {
-    filter: brightness(.8);
-}
+.bottom .lessonsBox {
+    width: 100vw;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: auto;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
 
-.lessons .buttons .abled {
-    color: black;
-}
-
-.lessons .buttons .abled:hover {
-    color: rgb(58, 56, 56);
-}
-
-.lessons .buttons>.abled:active {
-    background-color: #f1f1f1;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 
-
-@media (max-width: 600px) and (max-height: 900px) {
-    .animate .left {
-        opacity: 0;
-        transform: translateY(100vh);
-        animation: leftUp .7s .5s ease-out forwards;
-    }
-
-    .animate .right {
-        opacity: 0;
-        transform: translateY(100vh);
-        animation: rightUp .7s 0s ease-out forwards;
-    }
-
-    .lessons {
-        flex-direction: column;
-        height: fit-content;
-        padding: 2rem 0;
-    }
-
-    .lessons .wrapper {
-        flex-direction: column-reverse;
-        gap: 0;
-        height: fit-content;
-    }
-
-    .lessons .buttons>button {
-        background-color: transparent;
-        color: #a79f9f;
-        border: none;
-        font-weight: bold;
-        border-radius: .25rem;
-        font-size: 3rem;
-        width: 4rem;
-        height: 4rem;
-    }
-
-    .lessons>div {
-        width: 100vw;
-        height: fit-content;
-    }
-
-    .lessons .left {
-        height: fit-content;
-        margin: 2rem 0 0 0;
-    }
-
-    .lessons .left .wrapper {
-        width: 90vw;
-        height: fit-content;
-    }
-
-    .lessons .left .image {
-        width: 15rem;
-    }
-
-    .lessons .right {
-        height: fit-content;
-    }
-
-    .lessons .right .wrapper {
-        width: 90vw;
-        height: 50vh;
-        transform: translateY(0);
-    }
-
-    .lessons .right .wrapper>h2 {
-        width: 90vw;
-    }
-
-    .lessons .right .wrapper .contentWrapper {
-        width: 90vw;
-        height: 50vh;
-    }
-
-    .lessons .right .wrapper .buttons {
-        width: 90vw;
-    }
-
-
+.bottom .lessonsBox .lessonWrapper {
+    width: 300px;
+    height: 400px;
+    padding: .75rem .3rem;
+    background-color: white;
+    box-shadow: 2px 2px 7px -2px black;
+    border-radius: 1.3rem;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all .3s ease-in;
+    cursor: pointer;
 }
 
-@media (max-width: 600px) and (max-height: 400px) {
-    .lessons .right .wrapper {
-        height: 80vh;
+.bottom .lessonsBox .showCard:nth-child(1) {
+    animation: popLesson .5s calc(.3s * 1) ease-in forwards;
+}
+
+.bottom .lessonsBox .showCard:nth-child(2) {
+    animation: popLesson .5s calc(.3s * 2) ease-in forwards;
+}
+
+.bottom .lessonsBox .showCard:nth-child(3) {
+    animation: popLesson .5s calc(.3s * 3) ease-in forwards;
+}
+
+.bottom .lessonsBox .showCard:nth-child(4) {
+    animation: popLesson .5s calc(.3s * 4) ease-in forwards;
+}
+
+.bottom .lessonsBox .lessonWrapper:hover {
+    scale: 1.05;
+}
+
+.bottom .lessonsBox .lessonWrapper:first-child {
+    margin-left: 3rem;
+}
+
+.bottom .lessonsBox .lessonWrapper .imageContainer {
+    width: 100%;
+    height: 155px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.bottom .lessonsBox .lessonWrapper .imageContainer>img {
+    width: 100%;
+}
+
+.bottom .lessonsBox .lessonWrapper .contentBox>* {
+    margin: .5rem;
+}
+
+.bottom .lessonsBox .lessonWrapper .contentBox>p {
+    height: calc(400px - 200px);
+    overflow-y: scroll;
+}
+
+.bottom .lessonsBox .lessonWrapper .contentBox>p::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes popLesson {
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 600px) and (max-height: 800px) {
+    .bottom .lessonsBox .lessonWrapper {
+        width: 240px;
+        height: 300px;
     }
 
+    .bottom .lessonsBox .lessonWrapper:first-child {
+        margin-left: 1.5rem;
+    }
+
+    .bottom .lessonsBox .lessonWrapper .contentBox>p {
+        height: calc(300px - 200px);
+        overflow-y: scroll;
+    }
 }
