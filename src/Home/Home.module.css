@@ -34,7 +34,7 @@
     align-items: end;
     justify-content: center;
     font-family: Kadwa;
-    background-image: url('./wave.png');
+    background-image: url('../wave.png');
     background-position-x: -200px;
     background-size: cover;
     background-color: lightcyan;
