@@ -4,13 +4,13 @@
 
 .animate .left {
     opacity: 0;
-    transform: translateY(100vh);
+    transform: translateY(20vh);
     animation: leftUp .7s 0s ease-out forwards;
 }
 
 .animate .right {
     opacity: 0;
-    transform: translateY(100vh);
+    transform: translateY(20vh);
     animation: rightUp .7s .5s ease-out forwards;
 }
 

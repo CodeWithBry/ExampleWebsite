@@ -10,12 +10,14 @@ const SideBar = () => {
         <div className={!hideSideBar ? s.sideBarWrapper : s.hideSideBarWrapper}>
             <div className={!hideSideBar ? s.sideBarBox : s.hideSideBarBox}>
                 <div className={s.top}>
-                    <div className={s.titleAndPic}>
+                    <div className={s.titleAndPic} onClick={() => {
+                            setHideSideBar(true)
+                        }}>
                         <button
-                            onClick={()=>{
+                            onClick={() => {
                                 setHideSideBar(true)
                             }}>
-                                <i className='fa fa-angle-right'></i>
+                            <i className='fa fa-angle-right'></i>
                         </button>
                         <img src="./code.png" alt="Logo" />
                         <h3>WebDev</h3>
@@ -25,7 +27,7 @@ const SideBar = () => {
                 <ul className={s.tabs}>
                     {pages?.map((page, index) => (
                         <li key={index} className={page.ind ? `${s.active} ${s.links}` : s.links}>
-                            
+
                             <a href={`#${page.name.toLowerCase()}`} className={s.navLinkText}
                                 onClick={() => {
                                     setPages(prev => prev.map(p => p.name === page.name ? { ...p, ind: true } : { ...p, ind: false }))

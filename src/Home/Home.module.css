@@ -1,4 +1,4 @@
-.hideComponents > * {
+.hideComponents>* {
     opacity: 0;
 }
 
@@ -92,7 +92,7 @@
     text-decoration: none;
 }
 
-.home .left .buttons .platforms:hover > button:not(:hover){
+.home .left .buttons .platforms:hover>button:not(:hover) {
     opacity: .6;
 }
 
@@ -160,16 +160,11 @@
         padding-bottom: 2rem;
     }
 
-    .home>div {
-        width: 100%;
-        height: fit-content;
-    }
-
     .home .left,
     .home .right {
         width: 100%;
         align-items: center;
-        height: fit-content;
+        height: 50vh;
     }
 
     .home .left>* {
@@ -206,9 +201,22 @@
 
 
 @media (max-width: 780px) and (max-height: 900px) {
-    .home .left > *{
+    .animate .left {
+        opacity: 0;
+        transform: translateY(20vh);
+        animation: leftUp .7s .5s ease-out forwards;
+    }
+
+    .animate .right {
+        opacity: 0;
+        transform: translateY(20vh);
+        animation: rightUp .7s 0s ease-out forwards;
+    }
+
+    .home .left>* {
         margin: 0 .5rem;
     }
+
     .home .left .platforms {
         display: flex;
         gap: .5rem;
