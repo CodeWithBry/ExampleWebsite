@@ -34,7 +34,7 @@
     align-items: end;
     justify-content: center;
     font-family: Kadwa;
-    background-image: url('./wave.svg');
+    background-image: url('wave.svg');
     background-position-x: -200px;
     background-size: cover;
     background-color: lightcyan;
