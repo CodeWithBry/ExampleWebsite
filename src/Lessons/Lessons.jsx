@@ -33,9 +33,9 @@ const Lessons = () => {
 
     useEffect(() => {
         if (lessonsRef?.current) {
-          setLessonsPage(lessonsRef.current)
+            setLessonsPage(lessonsRef.current)
         }
-      }, [lessonsRef])
+    }, [lessonsRef])
 
 
     return (
@@ -45,12 +45,12 @@ const Lessons = () => {
             </div>
 
             <div className={s.bottom}>
-                 <button id={s.toLeft} onClick={() => { slideElement(0) }}>
-                        <i className="	fa fa-angle-left"></i>
-                    </button>
-                    <button id={s.toRight} onClick={() => { slideElement(1) }}>
-                        <i className="	fa fa-angle-right"></i>
-                    </button>
+                <button id={s.toLeft} onClick={() => { slideElement(0) }}>
+                    <i className="	fa fa-angle-left"></i>
+                </button>
+                <button id={s.toRight} onClick={() => { slideElement(1) }}>
+                    <i className="	fa fa-angle-right"></i>
+                </button>
                 <div className={s.lessonsBox} ref={lessonsBoxRef}>
 
                     {lessons?.map((con, i) => {
